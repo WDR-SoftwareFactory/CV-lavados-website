@@ -5,9 +5,10 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - .:/app
-      - ./_site:/app/_site
-      - ./_cache:/app/.jekyll-cache
+      - .:/srv/jekyll
+    command: bundle exec jekyll serve --host 0.0.0.0 --incremental
+    container_name: jekyll
+    restart: always
     environment:
       - JEKYLL_ENV=development
-    command: bundle exec jekyll serve --host 0.0.0.0 --livereload 
+    working_dir: /srv/jekyll

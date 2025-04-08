@@ -1,27 +1,20 @@
-# Use Debian as a parent image
-FROM debian:latest
+FROM ruby:3.1
 
-# Update the package index and install necessary packages
-RUN apt-get update && apt-get install -y \
-    ruby \
-    ruby-bundler \
-    ruby-dev \
-    build-essential && rm -rf /var/lib/apt/lists/* 
+# Instalar dependencias
+RUN apt-get update -qq && apt-get install -y build-essential
 
-# Set the working directory to /app
-WORKDIR /app
+# Instalar Jekyll y dependencias
+RUN gem install jekyll bundler jekyll-sass-converter
 
-# Display Ruby version and bundler version
-RUN ruby --version && bundle --version && gem install bundler jekyll
-
-# Copy the Jekyll site files
+# Copiar el proyecto
+WORKDIR /srv/jekyll
 COPY . .
 
-# Install dependencies
+# Instalar las gemas del proyecto
 RUN bundle install
 
-# Expose port 4000
+# Exponer el puerto para el servidor de Jekyll
 EXPOSE 4000
 
-# Command to run when the container starts
+# Comando para compilar y servir el sitio
 CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]

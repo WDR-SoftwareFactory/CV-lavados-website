@@ -7,6 +7,12 @@
 <loc>http://0.0.0.0:4000/contacto.html</loc>
 </url>
 <url>
+<loc>http://0.0.0.0:4000/servicios/hogares.html</loc>
+</url>
+<url>
 <loc>http://0.0.0.0:4000/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/servicios.html</loc>
 </url>
 </urlset>
