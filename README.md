@@ -17,7 +17,7 @@ CV Lavados ofrece soluciones profesionales de limpieza para una amplia gama de n
 
 Este proyecto tiene como objetivo proporcionar una plataforma digital moderna y eficiente para presentar nuestros servicios, interactuar con nuestros clientes y gestionar solicitudes.
 
-## Tabla de Contenidos (Opcional, si el README es largo)
+## Tabla de Contenidos
 
 *   [Características Principales](#características-principales-del-sitio)
 *   [Tecnologías Utilizadas](#tecnologías-utilizadas)
