@@ -39,7 +39,8 @@ nav a:hover::after {
   width: 100%;
 }
 .hero {
-  background: url("/assets/images/hero.jpg") center/cover;
+  /* background: url("/assets/images/hero.jpg") center/cover; */
+  background-color: #1a3c87;
   padding: 100px 20px;
   text-align: center;
   color: #ffffff;
