@@ -6,12 +6,14 @@ baseurl: ""
 plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
+
 sass:
   sass_dir: assets/css
   style: compressed
+
 defaults:
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: default
 ---
