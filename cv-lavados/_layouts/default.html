@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV Lavados - Servicios de limpieza profesional en Buenos Aires. Lavado de alfombras, tapizados, finales de obra y más para hogares, empresas y embarcaciones.">
+  <meta name="keywords" content="limpieza profesional, lavado de alfombras, tapizados, limpieza de oficinas, finales de obra, limpieza de embarcaciones, Buenos Aires, CV Lavados">
+  <meta name="author" content="CV Lavados">
+  <meta name="robots" content="index, follow">
+  <title>{{ page.title }} - CV Lavados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/cv.png' | relative_url }}">
+</head>
+<body>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  <button id="topBtn" aria-label="Volver al inicio">↑</button>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Animaciones al hacer scroll
+      const fadeElems = document.querySelectorAll(".fade-in-up");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+      fadeElems.forEach(el => observer.observe(el));
+      
+      // Slider de trabajos
+      const works = document.querySelectorAll(".work-slider img");
+      let workIdx = 0;
+      if (works.length > 0) {
+        works.forEach((el, i) => {
+          el.style.display = i === 0 ? "block" : "none";
+          if (i === 0) el.classList.add("active");
+        });
+        setInterval(() => {
+          works[workIdx].style.display = "none";
+          works[workIdx].classList.remove("active");
+          workIdx = (workIdx + 1) % works.length;
+          works[workIdx].style.display = "block";
+          works[workIdx].classList.add("active");
+        }, 4000);
+      }
+
+      // Slider de testimonios
+      const testimonials = document.querySelectorAll(".testimonial-slider blockquote");
+      let testimonialIdx = 0;
+      if (testimonials.length > 0) {
+        testimonials.forEach((el, i) => {
+          el.style.display = i === 0 ? "block" : "none";
+          if (i === 0) el.classList.add("active");
+        });
+        setInterval(() => {
+          testimonials[testimonialIdx].style.display = "none";
+          testimonials[testimonialIdx].classList.remove("active");
+          testimonialIdx = (testimonialIdx + 1) % testimonials.length;
+          testimonials[testimonialIdx].style.display = "block";
+          testimonials[testimonialIdx].classList.add("active");
+        }, 4000);
+      }
+
+      // Botón "Volver arriba"
+      const topBtn = document.getElementById("topBtn");
+      window.onscroll = () => {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          topBtn.style.display = "block";
+        } else {
+          topBtn.style.display = "none";
+        }
+      };
+      topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
