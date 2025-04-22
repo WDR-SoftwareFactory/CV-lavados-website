@@ -1,9 +1,12 @@
+/* Estilos generales */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #ffffff;
   color: #4a90e2;
 }
+
+/* Estilos del header */
 header {
   background: #4a90e2;
   padding: 10px 20px;
@@ -38,6 +41,8 @@ nav a::after {
 nav a:hover::after {
   width: 100%;
 }
+
+/* Estilos del index.html */
 .hero {
   /* background: url("./assets/images/hero.jpg") center/cover; */
   background-color: #1a3c87;
@@ -240,7 +245,9 @@ nav a:hover::after {
   background: #00c4cc;
   color: #ffffff;
 }
-.contact {
+
+/* Estilos del contacto.html */
+.contacto {
   padding: 50px 20px;
   text-align: center;
   background: #ffffff;
@@ -296,12 +303,18 @@ nav a:hover::after {
 .contact .whatsapp-btn:hover {
   background: #1da851;
 }
+
+/* Estilos del footer */
 footer {
   background: #1a3c87;
   color: #ffffff;
   text-align: center;
-  padding: 20px;
+  padding: 50px;
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 footer a {
   color: #e8ecef;
@@ -312,6 +325,49 @@ footer a {
 footer a:hover {
   color: #00c4cc;
 }
+.links-footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.links-footer .links-footer-urls {
+  padding: 10px 0;
+}
+.contact-btn {
+  background: none;
+  border: none;
+}
+.contact-btn a {
+  background: #ffffff;
+  color: #4a90e2;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.contact-btn a:hover {
+  background: #00c4cc;
+  color: #ffffff;
+}
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 10px 0;
+  gap: 4rem;
+}
+.social-links .social-links-icons {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 2rem;
+}
+/* Estilos del botón de subir */
 #topBtn {
   position: fixed;
   bottom: 20px;
@@ -337,6 +393,8 @@ footer a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Estilos responsivos */
 @media (max-width: 768px) {
   .service-grid,
   .work-slider,
@@ -362,5 +420,21 @@ footer a:hover {
   }
   .testimonial-slider blockquote {
     font-size: 0.9em;
+  }
+}
+
+/* Estilos responsive del footer */
+@media (max-width: 890px) {
+  footer {
+    flex-direction: column;
+  }
+  .links-footer {
+    padding: 10px 0;
+  }
+  .social-links {
+    gap: 3rem;
+  }
+  .social-links .social-links-icons {
+    gap: 3rem;
   }
 }
