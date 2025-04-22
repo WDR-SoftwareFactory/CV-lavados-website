@@ -1,19 +1,21 @@
 ---
 title: CV Lavados
 description: Limpieza integral para hogares, empresas y embarcaciones
-url: "https://wdr-softwarefactory.github.io" # Reemplaza con tu URL
-baseurl: "CV-lavados-website"
+source: ./
+destination: ./_site
+url: {{ site.env.SITE_URL | 'https://wdr-softwarefactory.github.io'  }}
+baseurl: ""
 plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
-
+  - jekyll-environment-variables
 sass:
   sass_dir: assets/css
   style: compressed
-
 defaults:
   - scope:
       path: ""
     values:
       layout: default
 ---
+

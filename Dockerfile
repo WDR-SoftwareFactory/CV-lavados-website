@@ -10,11 +10,14 @@ RUN gem install jekyll bundler jekyll-sass-converter
 WORKDIR /srv/jekyll
 
 # Copiar Gemfile y Gemfile.lock primero para aprovechar el caché
-COPY cv-lavados/Gemfile* ./
+COPY src/Gemfile* ./
 RUN bundle install
 
 # Copiar el resto del proyecto
-COPY cv-lavados/ .
+COPY src/ .
+
+# Copiar los archivos de configuración desde la raíz
+COPY _config.yml ./
 
 # Exponer el puerto
 EXPOSE 4000
