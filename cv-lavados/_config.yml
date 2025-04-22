@@ -1,8 +1,8 @@
 ---
 title: CV Lavados
 description: Limpieza integral para hogares, empresas y embarcaciones
-url: "https://cvlavados.com.ar" # Reemplaza con tu URL
-baseurl: ""
+url: "https://wdr-softwarefactory.github.io" # Reemplaza con tu URL
+baseurl: "CV-lavados-website"
 plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
