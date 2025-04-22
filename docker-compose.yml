@@ -1,0 +1,12 @@
+services:
+  jekyll:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec jekyll serve --host 0.0.0.0 --force_polling --config _config.yml,_config.dev.yml
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./cv-lavados:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=development
