@@ -2,10 +2,11 @@
 layout: default
 title: Inicio
 ---
+
 <section class="hero fade-in-up">
   <h1>Limpieza integral para tu mundo</h1>
-  <p>Hogares, empresas y embarcaciones</p>
-  <button>Descubre más</button>
+  <p>Hogares, empresas, embarcaciones, interiores y más</p>
+  <a href="{{ site.url }}/{{ site.baseurl }}/servicios/" class="button-hero">Descubrir</a>
 </section>
 <section class="services fade-in-up">
   <h2>Nuestros Servicios</h2>
@@ -37,6 +38,15 @@ title: Inicio
         <a href="{{ site.url }}/{{ site.baseurl }}/servicios/embarcaciones">Más info</a>
       </button>
     </div>
+    <div class="service-card">
+      <img src="{{ site.url }}/{{ site.baseurl }}/assets/images/car.jpg" alt="Limpieza de interiores por CV Lavados">
+      <i class="fas fa-car"></i>
+      <h3>Interiores</h3>
+      <p>Vehículo nuevamente como un 0km.</p>
+      <button>
+        <a href="{{ site.url }}/{{ site.baseurl }}/servicios/embarcaciones">Más info</a>
+      </button>
+    </div>
   </div>
 </section>
 <section class="testimonials fade-in-up">
@@ -51,7 +61,7 @@ title: Inicio
       <h4>Juan P.</h4>
     </blockquote>
     <blockquote>
-      <p>"Mi yate nunca había estado tan limpio. ¡Increíble!"</p>
+      <p>"Mi flota nunca había estado tan limpia. ¡Unos genios!"</p>
       <h4>Carlos R.</h4>
     </blockquote>
   </div>

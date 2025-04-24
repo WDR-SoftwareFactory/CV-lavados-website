@@ -60,20 +60,20 @@ nav a:hover::after {
   color: #ffffff;
   font-size: 1.2em;
 }
-.hero button {
-  background: #00c4cc;
+.hero .button-hero {
+  background: #00C4CC;
   color: #ffffff;
   border: none;
-  padding: 12px 24px;
+  padding: 12px 32px;
   font-size: 1.2em;
-  cursor: pointer;
-  transition:
-    background 0.3s,
-    transform 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s, transform 0.3s, color 0.3s;
   border-radius: 8px;
 }
-.hero button:hover {
-  background: #4a90e2;
+.hero .button-hero:hover {
+  background: #ffffff;
+  color: #4A90E2;
   transform: scale(1.05);
 }
 .services {
