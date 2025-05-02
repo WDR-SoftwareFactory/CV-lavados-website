@@ -60,10 +60,9 @@ nav a:hover::after {
   color: #ffffff;
   font-size: 1.2em;
 }
-.hero .button-hero {
+.hero a {
   background: #00C4CC;
   color: #ffffff;
-  border: none;
   padding: 12px 32px;
   font-size: 1.2em;
   text-decoration: none;
@@ -71,7 +70,7 @@ nav a:hover::after {
   transition: background 0.3s, transform 0.3s, color 0.3s;
   border-radius: 8px;
 }
-.hero .button-hero:hover {
+.hero a:hover {
   background: #ffffff;
   color: #4A90E2;
   transform: scale(1.05);
@@ -141,14 +140,12 @@ nav a:hover::after {
   transition: background 0.3s, transform 0.3s;
   border-radius: 8px;
 }
-
 .service-card .button:hover {
   background: #4a90e2;
   transform: scale(1.05);
   color: #ffffff;
   text-decoration: none;
 }
-
 .works {
   padding: 50px 20px;
   text-align: center;
