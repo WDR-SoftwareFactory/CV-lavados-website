@@ -4,7 +4,7 @@ description: Limpieza integral para hogares, empresas y embarcaciones
 source: ./
 destination: ./_site
 url: {{ site.env.SITE_URL | 'https://wdr-softwarefactory.github.io'  }}
-baseurl: "/CV-lavados-website"
+# baseurl: "/CV-lavados-website"
 plugins:
   - jekyll-sitemap
   - jekyll-sass-converter

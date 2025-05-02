@@ -129,28 +129,26 @@ nav a:hover::after {
   color: #757575;
   font-size: 0.9em;
 }
-.service-card button {
+.service-card .button {
   background: #00c4cc;
   color: #ffffff;
   border: none;
   padding: 8px 15px;
   margin-top: 10px;
   cursor: pointer;
-  transition:
-    background 0.3s,
-    transform 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s, transform 0.3s;
   border-radius: 8px;
 }
 
-.service-card button a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.service-card button:hover {
+.service-card .button:hover {
   background: #4a90e2;
   transform: scale(1.05);
+  color: #ffffff;
+  text-decoration: none;
 }
+
 .works {
   padding: 50px 20px;
   text-align: center;
