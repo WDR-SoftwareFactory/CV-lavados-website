@@ -32,7 +32,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Update Jekyll config
         run: |
-          sed -i "s|domain:.*|domain: \"${{ vars.FULL_DOMAIN }}\"|" /src/_config.yml
+          sed -i "s|domain:.*|domain: \"${{ vars.FULL_DOMAIN }}\"|" ./src/_config.yml
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
