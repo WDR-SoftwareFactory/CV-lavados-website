@@ -36,8 +36,12 @@ GEM
       webrick (~> 1.7)
     jekyll-environment-variables (1.0.1)
       jekyll (>= 3.0, < 5.x)
+    jekyll-feed (0.17.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
+    jekyll-seo-tag (2.8.0)
+      jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
@@ -75,7 +79,9 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-environment-variables
+  jekyll-feed
   jekyll-sass-converter
+  jekyll-seo-tag
   jekyll-sitemap
   webrick
 

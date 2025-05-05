@@ -35,6 +35,13 @@ jobs:
         with:
           source: ./src
           destination: ./_site
+        env:
+          JEKYLL_ENV: production
+        run: |
+          # Actualizar domain en _config.yml con FULL_DOMAIN
+          sed -i "s|domain:.*|domain: \"${{ env.FULL_DOMAIN }}\"|" _config.yml
+          # Ejecutar la compilación de Jekyll
+          jekyll build --source ./src --destination ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

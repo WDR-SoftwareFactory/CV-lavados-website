@@ -3,12 +3,13 @@ title: CV Lavados
 description: Limpieza integral para hogares, empresas y embarcaciones
 source: ./
 destination: ./_site
-url: {{ site.SITE_URL | site.FULL_DOMAIN  }}
-# baseurl: "CV-lavados-website"
+domain: http://localhost:4000
 plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
   - jekyll-environment-variables
+  - jekyll-feed
+  - jekyll-seo-tag
 sass:
   sass_dir: assets/css
   style: compressed
@@ -18,4 +19,3 @@ defaults:
     values:
       layout: default
 ---
-

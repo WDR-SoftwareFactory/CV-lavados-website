@@ -7,12 +7,12 @@ title: Servicios
   <h2>Contáctanos</h2>
   <p>¿Listo para transformar tu espacio? Escríbenos y solicita tu presupuesto.</p>
   <div class="service-card">
-      <img src="{{ site.FULL_DOMAIN }}/images/business.jpg" alt="Limpieza de oficinas por CV Lavados">
+      <img src="{{ site.domain }}/assets/images/business.jpg" alt="Limpieza de oficinas por CV Lavados">
       <i class="fas fa-building"></i>
       <h3>Servicios</h3>
       <p>Espacios impecables para tu negocio.</p>
       <button>
-        <a href="{{ site.FULL_DOMAIN }}/servicios/hogares">Más info</a>
+        <a href="{{ site.domain }}/servicios/hogares">Más info</a>
       </button>
   </div>
 </section>

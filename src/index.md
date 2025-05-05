@@ -6,38 +6,38 @@ title: Inicio
 <section class="hero fade-in-up">
   <h1>Limpieza integral para tu mundo</h1>
   <p>Hogares, empresas, embarcaciones, interiores y más</p>
-  <a href="{{ site.FULL_DOMAIN }}/servicios/">Descubrir</a>
+  <a href="{{ site.domain }}/servicios/">Descubrir</a>
 </section>
 <section class="services fade-in-up">
   <h2>Nuestros Servicios</h2>
   <div class="service-grid">
     <div class="service-card">
-      <img src="{{ site.FULL_DOMAIN }}/assets/images/home.jpg" alt="Limpieza profesional de hogares por CV Lavados">
+      <img src="{{ site.domain }}/assets/images/home.jpg" alt="Limpieza profesional de hogares por CV Lavados">
       <i class="fas fa-home"></i>
       <h3>Hogares</h3>
       <p>Limpieza profunda y detallada.</p>
-      <a href="{{ site.FULL_DOMAIN }}/servicios/hogares" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios/hogares" class="button">Más info</a>
     </div>
     <div class="service-card">
-      <img src="{{ site.FULL_DOMAIN }}/assets/images/business.jpg" alt="Limpieza de oficinas por CV Lavados">
+      <img src="{{ site.domain }}/assets/images/business.jpg" alt="Limpieza de oficinas por CV Lavados">
       <i class="fas fa-building"></i>
       <h3>Empresas</h3>
       <p>Espacios impecables para tu negocio.</p>
-      <a href="{{ site.FULL_DOMAIN }}/servicios/empresas" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios/empresas" class="button">Más info</a>
     </div>
     <div class="service-card">
-      <img src="{{ site.FULL_DOMAIN }}/assets/images/boat.jpg" alt="Limpieza de embarcaciones por CV Lavados">
+      <img src="{{ site.domain }}/assets/images/boat.jpg" alt="Limpieza de embarcaciones por CV Lavados">
       <i class="fas fa-ship"></i>
       <h3>Embarcaciones</h3>
       <p>Mantenimiento premium en el agua.</p>
-      <a href="{{ site.FULL_DOMAIN }}/servicios/embarcaciones" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios/embarcaciones" class="button">Más info</a>
     </div>
     <div class="service-card">
-      <img src="{{ site.FULL_DOMAIN }}/assets/images/car.jpg" alt="Limpieza de interiores por CV Lavados">
+      <img src="{{ site.domain }}/assets/images/car.jpg" alt="Limpieza de interiores por CV Lavados">
       <i class="fas fa-car"></i>
       <h3>Interiores</h3>
       <p>Vehículo nuevamente como un 0km.</p>
-      <a href="{{ site.FULL_DOMAIN }}/servicios/interiores" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios/interiores" class="button">Más info</a>
     </div>
   </div>
 </section>
@@ -60,5 +60,5 @@ title: Inicio
 </section>
 <section class="cta-section fade-in-up">
   <h2>¿Listo para transformar tu espacio?</h2>
-  <a href="{{ site.FULL_DOMAIN }}/contacto">Solicita tu presupuesto</a>
+  <a href="{{ site.domain }}/contacto">Solicita tu presupuesto</a>
 </section>
