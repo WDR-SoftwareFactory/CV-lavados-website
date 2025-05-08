@@ -242,8 +242,76 @@ nav a:hover::after {
 }
 
 /* Estilos del contacto.html */
+.form-modern {
+  background: #fffef7;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-modern .form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-modern .form-row .form-group {
+  flex: 1;
+}
+
+.form-modern .form-group {
+  margin-bottom: 15px;
+}
+
+input[type=consulta] {
+height: 100px;
+}
+
+.form-modern input,
+.form-modern select {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #1f5128;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.form-modern input:focus,
+.form-modern select:focus {
+  border-color: #31763f;
+  outline: none;
+}
+
+.form-modern button {
+  width: 100%;
+  padding: 14px;
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-modern .form-footer-text {
+  font-size: 11px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.form-modern .form-footer-text a {
+  color: #31763f;
+  text-decoration: underline;
+}
+
 .contacto {
-  padding: 50px 20px;
+  padding: 20px 20px;
   text-align: center;
   background: #ffffff;
 }
