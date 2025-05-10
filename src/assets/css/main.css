@@ -1,4 +1,12 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap') format('woff2'),
+}
+
 /* Estilos generales */
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave */
+}
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -13,6 +21,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* Fija el header */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 header img {
   height: 50px;
@@ -97,6 +109,7 @@ nav a:hover::after {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   transition: transform 0.3s;
+  margin: 10px;
 }
 .service-card:hover {
   transform: translateY(-5px);
@@ -298,10 +311,11 @@ nav a:hover::after {
 }
 
 /* Estilos del servicios.html */
-.nuestros-servicios {
-  padding: 50px 20px;
+.our-services {
+  padding: 0;
   text-align: center;
   background: #ffffff;
+  min-height: 100vh; /* Asegura que ocupe al menos la altura de la pantalla */
 }
 .service-grid {
   display: flex;
@@ -309,7 +323,7 @@ nav a:hover::after {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.service-text {
+.service-text-intro {
   display: flex;
   flex: auto;
   flex-direction: column;
@@ -323,9 +337,39 @@ nav a:hover::after {
   max-width: 50%;
   min-height: 200px;
 }
-.service-text h2 {
-  font-size: 2em;
+.service-text-intro h2 {
+  font-size: 4rem;
   text-align: start;
+}
+.service-text-intro p {
+  font-size: 2rem;
+  text-align: start;
+}
+.service-text {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  width: 45%;
+  min-width: 300px;
+  flex-grow: 1;
+  max-width: 50%;
+  min-height: 200px;
+  margin: 20px 20px 20px 20px;
+}
+.service-text h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 4rem;
+}
+.service-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
 }
 .service-image {
   display: flex;
@@ -341,17 +385,13 @@ nav a:hover::after {
 }
 .service-image img {
   width: 75%;
-  min-width: 300px;
-  height: 340px;
+  height: 70vh;
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s;
 }
 .service-divider {
-  width: 100%;
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 20px 20PX;
+  display: none; /* Eliminamos el divisor para el diseño full-screen */
 }
 .service-info {
   display: flex;
@@ -359,14 +399,37 @@ nav a:hover::after {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px 0 20px 0;
-  border-radius: 12px;
-  transition: transform 0.3s;
+  flex-wrap: wrap;
+  padding: 0;
   width: 100%;
 }
 .service-section {
   display: flex;
   flex-direction: row;
+  background: #F5F5F5;
+  border-radius: 20px;
+  margin: 0;
+}
+.gallery-full-section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+}
+.gallery-full-section h2 {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  font-size: 4rem;
+}
+.gallery-slider {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
 }
 .slide-fotos { 
   width: 100%; 
@@ -379,7 +442,7 @@ nav a:hover::after {
   display: flex; 
   width: 100%; 
   height: 100%; 
-  transition: transform 1.5s ease-in-out; 
+  transition: transform 0.6s ease-in-out; 
 }
 .slide-img { 
   flex: 0 0 100%; 
@@ -468,6 +531,8 @@ footer a:hover {
 #topBtn:hover {
   background: #4a90e2;
 }
+
+/* Animaciones personalizadas */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -478,11 +543,63 @@ footer a:hover {
   transform: translateY(0);
 }
 
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Asegura que las animaciones se apliquen solo a los elementos de our-services */
+.our-services .fade-in-up,
+.our-services .slide-in-left,
+.our-services .slide-in-right,
+.our-services .fade-in {
+  opacity: 0;
+}
+
+.our-services .visible {
+  opacity: 1;
+}
+
+/* Estilos para secciones de pantalla completa */
+.full-screen-section {
+  height: 100vh; /* Altura completa de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
   .service-grid,
   .work-slider,
-  .testimonial-slider {
+  .testimonial-slider,
+  .gallery-slider {
     flex-direction: column;
     align-items: center;
   }
@@ -504,6 +621,24 @@ footer a:hover {
   }
   .testimonial-slider blockquote {
     font-size: 0.9em;
+  }
+  .full-screen-section {
+    height: auto; /* Ajusta la altura en pantallas pequeñas */
+    min-height: 100vh;
+  }
+  .service-text,
+  .service-image {
+    width: 100%;
+    max-width: 100%;
+  }
+  .service-image img {
+    height: 200px; /* Ajusta la altura de la imagen en móviles */
+  }
+  .slide-fotos {
+    height: 200px; /* Ajusta la altura del slider en móviles */
+  }
+  .gallery-slider {
+    height: 60vh; /* Ajusta la altura del slider en móviles */
   }
 }
 
