@@ -60,5 +60,5 @@ title: Inicio
 </section>
 <section class="cta-section fade-in-up">
   <h2>¿Listo para transformar tu espacio?</h2>
-  <a href="{{ site.domain }}/contacto">Solicita tu presupuesto</a>
+  <a href="https://wa.me/5491136250796" target="_blank">Solicita tu presupuesto</a>
 </section>
