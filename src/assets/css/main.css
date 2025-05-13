@@ -8,6 +8,7 @@
 /* Estilos generales */
 html {
   scroll-behavior: smooth; /* Desplazamiento suave */
+  scroll-padding-top: 80px; /* Ajusta el desplazamiento para todo el documento */
 }
 body {
   margin: 0;
@@ -72,9 +73,8 @@ nav a:hover::after {
 
 /* Estilos del index.html */
 .hero {
-  /* background: url("./assets/images/hero.jpg") center/cover; */
   background-color: #1a3c87;
-  padding: 100px 20px;
+  padding: 180px 20px 100px 20px; /* Aumentamos padding-top para compensar el header */
   text-align: center;
   color: #ffffff;
   border-radius: 0 0 12px 12px;
@@ -574,18 +574,20 @@ footer {
   background: #1a3c87;
   color: #ffffff;
   text-align: center;
-  padding: 50px;
+  padding: 50px 20px; /* Padding base */
   font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 footer a {
   color: #e8ecef;
   margin: 0 10px;
   text-decoration: none;
   transition: color 0.3s;
+  font-size: 1em; /* Tamaño de fuente base */
 }
 footer a:hover {
   color: #00c4cc;
@@ -611,9 +613,7 @@ footer a:hover {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition:
-    background 0.3s,
-    color 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 .contact-btn a:hover {
   background: #00c4cc;
@@ -736,7 +736,7 @@ footer a:hover {
     align-items: center;
   }
   .hero {
-    padding: 50px 10px;
+    padding: 130px 10px 50px 10px; /* Ajustamos para móviles */
   }
   .hero h1 {
     font-size: 2em;
@@ -788,18 +788,50 @@ footer a:hover {
   }
 }
 
-/* Estilos responsive del footer */
+/* Estilos responsivos del footer */
 @media (max-width: 890px) {
   footer {
     flex-direction: column;
+    padding: 30px 10px; /* Reducimos padding en tablets */
   }
   .links-footer {
     padding: 10px 0;
+    width: 100%; /* Ocupa todo el ancho */
   }
   .social-links {
-    gap: 3rem;
+    gap: 2rem; /* Reducimos el espacio entre íconos */
+    justify-content: center; /* Centramos en tablets */
+    width: 100%;
+    margin-top: 10px;
   }
   .social-links .social-links-icons {
-    gap: 3rem;
+    gap: 1.5rem; /* Espacio menor entre íconos */
+  }
+  .contact-btn a {
+    padding: 10px 20px; /* Reducimos padding del botón */
+    font-size: 1em; /* Reducimos tamaño de fuente */
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    padding: 20px 10px; /* Más compacto en móviles pequeños */
+  }
+  footer a {
+    font-size: 0.9em; /* Fuente más pequeña en móviles */
+    margin: 0 5px; /* Menos margen */
+  }
+  .social-links {
+    gap: 1.5rem; /* Espacio aún más reducido */
+    flex-direction: column; /* Apilamos íconos verticalmente */
+    align-items: center;
+  }
+  .social-links .social-links-icons {
+    gap: 1rem; /* Espacio mínimo entre íconos */
+    flex-direction: row; /* Apilamos verticalmente */
+  }
+  .contact-btn a {
+    padding: 8px 16px; /* Más compacto */
+    font-size: 0.9em; /* Fuente más pequeña */
   }
 }
