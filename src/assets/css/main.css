@@ -410,7 +410,7 @@ nav a:hover::after {
 
 .contact__whatsapp-logo {
   width: 50%;
-  height: 40%;
+  height: 35%;
   margin-bottom: 25px;
   transition: var(--transition);
 }
@@ -869,9 +869,6 @@ footer a:hover {
   .contact__submit-btn {
     font-size: 1.2rem;
     padding: 14px 28px;
-  }
-  .contact__whatsapp-logo {
-    width: 100px;
   }
   .contact__whatsapp-text {
     font-size: 1.1rem;
