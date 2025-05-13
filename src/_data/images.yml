@@ -1,0 +1,22 @@
+home_images:
+  - hogares
+  - hogares2
+  - hogares3
+  - hogares4
+  - hogares5
+
+business_images:
+  - empresas
+  - empresas2
+
+boat_images:
+  - empresas
+  - empresas2
+
+car_images:
+  - interiores
+  - car
+
+gallery_images:
+  - silla
+  - silla-final

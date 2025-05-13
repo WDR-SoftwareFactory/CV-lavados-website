@@ -1,6 +1,8 @@
-@font-face {
-  font-family: 'Montserrat';
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap') format('woff2'),
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* Estilos generales */
@@ -17,7 +19,7 @@ body {
 /* Estilos del header */
 header {
   background: #4a90e2;
-  padding: 10px 20px;
+  padding: 20px 10px 20px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,9 +27,23 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+  gap: 20px; 
 }
 header img {
   height: 50px;
+  width: auto;
+}
+header div {
+  padding: 0 20px;
+  display: flex;
+}
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 20px;
 }
 nav a {
   color: #ffffff;
@@ -317,7 +333,7 @@ nav a:hover::after {
   background: #ffffff;
   min-height: 100vh; /* Asegura que ocupe al menos la altura de la pantalla */
 }
-.service-grid {
+.service-intro {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -325,10 +341,10 @@ nav a:hover::after {
 }
 .service-text-intro {
   display: flex;
-  flex: auto;
   flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
   text-align: left;
-  justify-content: start;
   border-radius: 12px;
   transition: transform 0.3s;
   width: 45%;
@@ -336,21 +352,41 @@ nav a:hover::after {
   flex-grow: 1;
   max-width: 50%;
   min-height: 200px;
+  font-family: 'Montserrat', sans-serif;
 }
 .service-text-intro h2 {
   font-size: 4rem;
-  text-align: start;
+  text-align: center;
 }
 .service-text-intro p {
   font-size: 2rem;
-  text-align: start;
+  text-align: center;
+}
+.service-image-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centramos las imágenes verticalmente */
+  width: 50%;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  margin: 10px;
+  min-width: 300px;
+  flex-grow: 1;
+  padding: 10px; /* Añadimos padding para consistencia */
+}
+.service-image-intro img {
+  width: 60%;
+  height: auto; /* Permitimos que la altura se ajuste al contenido */
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s;
 }
 .service-text {
   display: flex;
   flex: auto;
   flex-direction: column;
-  text-align: left;
-  justify-content: center;
+  text-align: center;
+  justify-content: center; /* Centramos el texto verticalmente */
   border-radius: 12px;
   transition: transform 0.3s;
   width: 45%;
@@ -359,34 +395,35 @@ nav a:hover::after {
   max-width: 50%;
   min-height: 200px;
   margin: 20px 20px 20px 20px;
+  padding: 20px; /* Añadimos padding para que el texto respire */
+  font-family: 'Montserrat', sans-serif;
 }
 .service-text h3 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: center;
   font-size: 4rem;
 }
 .service-text p {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 2rem;
+  text-align: center;
 }
 .service-image {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Centramos las imágenes verticalmente */
   width: 50%;
-  object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s;
   margin: 10px;
   min-width: 300px;
   flex-grow: 1;
+  padding: 10px; /* Añadimos padding para consistencia */
 }
 .service-image img {
-  width: 75%;
-  height: 70vh;
-  object-fit: cover;
+  width: 100%;
+  height: auto; /* Permitimos que la altura se ajuste al contenido */
+  object-fit: contain;
   border-radius: 12px;
   transition: transform 0.3s;
 }
@@ -409,46 +446,57 @@ nav a:hover::after {
   background: #F5F5F5;
   border-radius: 20px;
   margin: 0;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
 }
 .gallery-full-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
   text-align: center;
   background: #ffffff;
-}
-.gallery-full-section h2 {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  text-align: center;
-  background: #ffffff;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 .gallery-slider {
-  width: 100%;
-  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh; /* Altura ajustada para el slider dentro de la sección */
   overflow: hidden;
   position: relative;
 }
+.gallery-slider .slide-fotos { 
+  width: 100%; 
+  height: 100vh; /* Altura base adaptable */
+  min-height: 400px; /* Mínimo para pantallas grandes */
+  max-height: 600px; /* Máximo para evitar que crezca demasiado */
+  overflow: hidden; 
+  position: relative;
+  border-radius: 1%;
+}
 .slide-fotos { 
   width: 100%; 
-  height: 100%; 
+  height: 70vh; /* Altura base adaptable */
+  min-height: 400px; /* Mínimo para pantallas grandes */
+  max-height: 600px; /* Máximo para evitar que crezca demasiado */
   overflow: hidden; 
   position: relative;
   border-radius: 1%;
 }
 .slider--inner { 
   display: flex; 
-  width: 100%; 
   height: 100%; 
   transition: transform 0.6s ease-in-out; 
+  width: 100%; /* Aseguramos que el ancho inicial sea 100% */
 }
 .slide-img { 
-  flex: 0 0 100%; 
   width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  object-fit: cover; /* Llena el espacio */
+  min-width: 0; /* Evita problemas con el flex */
 }
 
 /* Estilos del footer */
@@ -540,7 +588,6 @@ footer a:hover {
 }
 .fade-in-up.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .slide-in-left {
@@ -592,9 +639,24 @@ footer a:hover {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  margin: 0; /* Eliminamos márgenes para un diseño más limpio */
 }
 
 /* Estilos responsivos */
+@media (max-width: 1024px) {
+  .slide-fotos {
+    height: 60vh; /* Reducimos un poco para pantallas medianas */
+    min-height: 350px;
+    max-height: 500px;
+  }
+  .service-text h3 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text p {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .service-grid,
   .work-slider,
@@ -630,12 +692,26 @@ footer a:hover {
   .service-image {
     width: 100%;
     max-width: 100%;
+    height: auto; /* Permitimos que la altura se ajuste al contenido en móviles */
+  }
+  .service-section {
+    flex-direction: column; /* Cambiamos a columna en móviles */
+    height: auto; /* Ajustamos la altura para que se adapte al contenido */
+    min-height: 100vh; /* Mínimo una pantalla completa */
+  }
+  .service-text h3 {
+    font-size: 2.5rem; /* Reducimos aún más para móviles */
+  }
+  .service-text p {
+    font-size: 1.2rem;
   }
   .service-image img {
-    height: 200px; /* Ajusta la altura de la imagen en móviles */
+    height: auto;
   }
   .slide-fotos {
-    height: 200px; /* Ajusta la altura del slider en móviles */
+    height: 50vh; /* Ajustamos la altura del slider en móviles */
+    min-height: 300px;
+    max-height: 400px;
   }
   .gallery-slider {
     height: 60vh; /* Ajusta la altura del slider en móviles */
