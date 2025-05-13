@@ -1,4 +1,14 @@
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* Estilos generales */
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave */
+}
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -9,13 +19,31 @@ body {
 /* Estilos del header */
 header {
   background: #4a90e2;
-  padding: 10px 20px;
+  padding: 20px 10px 20px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* Fija el header */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  gap: 20px; 
 }
 header img {
   height: 50px;
+  width: auto;
+}
+header div {
+  padding: 0 20px;
+  display: flex;
+}
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 20px;
 }
 nav a {
   color: #ffffff;
@@ -97,6 +125,7 @@ nav a:hover::after {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   transition: transform 0.3s;
+  margin: 10px;
 }
 .service-card:hover {
   transform: translateY(-5px);
@@ -240,8 +269,6 @@ nav a:hover::after {
   background: #00c4cc;
   color: #ffffff;
 }
-
-/* Estilos del contacto.html */
 .contacto {
   padding: 50px 20px;
   text-align: center;
@@ -297,6 +324,179 @@ nav a:hover::after {
 }
 .contact .whatsapp-btn:hover {
   background: #1da851;
+}
+
+/* Estilos del servicios.html */
+.our-services {
+  padding: 0;
+  text-align: center;
+  background: #ffffff;
+  min-height: 100vh; /* Asegura que ocupe al menos la altura de la pantalla */
+}
+.service-intro {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.service-text-intro {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: left;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  width: 45%;
+  min-width: 300px;
+  flex-grow: 1;
+  max-width: 50%;
+  min-height: 200px;
+  font-family: 'Montserrat', sans-serif;
+}
+.service-text-intro h2 {
+  font-size: 4rem;
+  text-align: center;
+}
+.service-text-intro p {
+  font-size: 2rem;
+  text-align: center;
+}
+.service-image-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centramos las imágenes verticalmente */
+  width: 50%;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  margin: 10px;
+  min-width: 300px;
+  flex-grow: 1;
+  padding: 10px; /* Añadimos padding para consistencia */
+}
+.service-image-intro img {
+  width: 60%;
+  height: auto; /* Permitimos que la altura se ajuste al contenido */
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+.service-text {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center; /* Centramos el texto verticalmente */
+  border-radius: 12px;
+  transition: transform 0.3s;
+  width: 45%;
+  min-width: 300px;
+  flex-grow: 1;
+  max-width: 50%;
+  min-height: 200px;
+  margin: 20px 20px 20px 20px;
+  padding: 20px; /* Añadimos padding para que el texto respire */
+  font-family: 'Montserrat', sans-serif;
+}
+.service-text h3 {
+  font-weight: 700;
+  text-align: center;
+  font-size: 4rem;
+}
+.service-text p {
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+.service-image {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centramos las imágenes verticalmente */
+  width: 50%;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  margin: 10px;
+  min-width: 300px;
+  flex-grow: 1;
+  padding: 10px; /* Añadimos padding para consistencia */
+}
+.service-image img {
+  width: 100%;
+  height: auto; /* Permitimos que la altura se ajuste al contenido */
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+.service-divider {
+  display: none; /* Eliminamos el divisor para el diseño full-screen */
+}
+.service-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 0;
+  width: 100%;
+}
+.service-section {
+  display: flex;
+  flex-direction: row;
+  background: #F5F5F5;
+  border-radius: 20px;
+  margin: 0;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.gallery-full-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  font-size: 2rem;
+}
+.gallery-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh; /* Altura ajustada para el slider dentro de la sección */
+  overflow: hidden;
+  position: relative;
+}
+.gallery-slider .slide-fotos { 
+  width: 100%; 
+  height: 100vh; /* Altura base adaptable */
+  min-height: 400px; /* Mínimo para pantallas grandes */
+  max-height: 600px; /* Máximo para evitar que crezca demasiado */
+  overflow: hidden; 
+  position: relative;
+  border-radius: 1%;
+}
+.slide-fotos { 
+  width: 100%; 
+  height: 70vh; /* Altura base adaptable */
+  min-height: 400px; /* Mínimo para pantallas grandes */
+  max-height: 600px; /* Máximo para evitar que crezca demasiado */
+  overflow: hidden; 
+  position: relative;
+  border-radius: 1%;
+}
+.slider--inner { 
+  display: flex; 
+  height: 100%; 
+  transition: transform 0.6s ease-in-out; 
+  width: 100%; /* Aseguramos que el ancho inicial sea 100% */
+}
+.slide-img { 
+  width: 100%; 
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  object-fit: cover; /* Llena el espacio */
+  min-width: 0; /* Evita problemas con el flex */
 }
 
 /* Estilos del footer */
@@ -379,6 +579,8 @@ footer a:hover {
 #topBtn:hover {
   background: #4a90e2;
 }
+
+/* Animaciones personalizadas */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -386,14 +588,80 @@ footer a:hover {
 }
 .fade-in-up.visible {
   opacity: 1;
-  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Asegura que las animaciones se apliquen solo a los elementos de our-services */
+.our-services .fade-in-up,
+.our-services .slide-in-left,
+.our-services .slide-in-right,
+.our-services .fade-in {
+  opacity: 0;
+}
+
+.our-services .visible {
+  opacity: 1;
+}
+
+/* Estilos para secciones de pantalla completa */
+.full-screen-section {
+  height: 100vh; /* Altura completa de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0; /* Eliminamos márgenes para un diseño más limpio */
 }
 
 /* Estilos responsivos */
+@media (max-width: 1024px) {
+  .slide-fotos {
+    height: 60vh; /* Reducimos un poco para pantallas medianas */
+    min-height: 350px;
+    max-height: 500px;
+  }
+  .service-text h3 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text p {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .service-grid,
   .work-slider,
-  .testimonial-slider {
+  .testimonial-slider,
+  .gallery-slider {
     flex-direction: column;
     align-items: center;
   }
@@ -415,6 +683,38 @@ footer a:hover {
   }
   .testimonial-slider blockquote {
     font-size: 0.9em;
+  }
+  .full-screen-section {
+    height: auto; /* Ajusta la altura en pantallas pequeñas */
+    min-height: 100vh;
+  }
+  .service-text,
+  .service-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* Permitimos que la altura se ajuste al contenido en móviles */
+  }
+  .service-section {
+    flex-direction: column; /* Cambiamos a columna en móviles */
+    height: auto; /* Ajustamos la altura para que se adapte al contenido */
+    min-height: 100vh; /* Mínimo una pantalla completa */
+  }
+  .service-text h3 {
+    font-size: 2.5rem; /* Reducimos aún más para móviles */
+  }
+  .service-text p {
+    font-size: 1.2rem;
+  }
+  .service-image img {
+    height: auto;
+  }
+  .slide-fotos {
+    height: 50vh; /* Ajustamos la altura del slider en móviles */
+    min-height: 300px;
+    max-height: 400px;
+  }
+  .gallery-slider {
+    height: 60vh; /* Ajusta la altura del slider en móviles */
   }
 }
 
