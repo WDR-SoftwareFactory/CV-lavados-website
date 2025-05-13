@@ -1,22 +1,33 @@
 home_images:
   - hogares
-  - hogares2
-  - hogares3
   - hogares4
+  - hogares2
+  - hogares6
   - hogares5
 
 business_images:
   - empresas
   - empresas2
+  - empresas3
+  - empresas4
 
 boat_images:
-  - empresas
-  - empresas2
+  - embarcaciones3
+  - embarcaciones2
+  - embarcaciones
+  - embarcaciones4
 
 car_images:
   - interiores
   - car
+  - interiores3
 
 gallery_images:
   - silla
   - silla-final
+  - hogares3
+  - alfombra
+  - alfombra2
+  - sillas
+  - sillas2
+  - sillon
