@@ -6,7 +6,7 @@ title: Inicio
 <section class="hero fade-in-up">
   <h1>Limpieza integral para tu mundo</h1>
   <p>Hogares, empresas, embarcaciones, interiores y más</p>
-  <a href="{{ site.domain }}/servicios/">Descubrir</a>
+  <a href="{{ site.domain }}/servicios">Descubrir</a>
 </section>
 <section class="services fade-in-up">
   <h2>Nuestros Servicios</h2>
@@ -16,28 +16,28 @@ title: Inicio
       <i class="fas fa-home"></i>
       <h3>Hogares</h3>
       <p>Limpieza profunda y detallada.</p>
-      <a href="{{ site.domain }}/servicios/#hogares" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios#hogares" class="button">Más info</a>
     </div>
     <div class="service-card">
       <img src="{{ site.domain }}/assets/images/business.jpg" alt="Limpieza de oficinas por CV Lavados">
       <i class="fas fa-building"></i>
       <h3>Empresas</h3>
       <p>Espacios impecables para tu negocio.</p>
-      <a href="{{ site.domain }}/servicios/#empresas" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios#empresas" class="button">Más info</a>
     </div>
     <div class="service-card">
       <img src="{{ site.domain }}/assets/images/boat.jpg" alt="Limpieza de embarcaciones por CV Lavados">
       <i class="fas fa-ship"></i>
       <h3>Embarcaciones</h3>
       <p>Mantenimiento premium en el agua.</p>
-      <a href="{{ site.domain }}/servicios/#embarcaciones" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios#embarcaciones" class="button">Más info</a>
     </div>
     <div class="service-card">
       <img src="{{ site.domain }}/assets/images/car.jpg" alt="Limpieza de interiores por CV Lavados">
       <i class="fas fa-car"></i>
       <h3>Interiores</h3>
       <p>Vehículo nuevamente como un 0km.</p>
-      <a href="{{ site.domain }}/servicios/#interiores" class="button">Más info</a>
+      <a href="{{ site.domain }}/servicios#interiores" class="button">Más info</a>
     </div>
   </div>
 </section>
