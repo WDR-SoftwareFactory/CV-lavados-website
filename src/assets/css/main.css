@@ -448,7 +448,7 @@ nav a:hover::after {
   padding: 0;
   text-align: center;
   background: #ffffff;
-  min-height: 100vh; /* Asegura que ocupe al menos la altura de la pantalla */
+  min-height: 100vw; /* Asegura que ocupe al menos la altura de la pantalla */
 }
 .service-intro {
   display: flex;
@@ -506,12 +506,10 @@ nav a:hover::after {
   justify-content: center; /* Centramos el texto verticalmente */
   border-radius: 12px;
   transition: transform 0.3s;
-  width: 45%;
   min-width: 300px;
   flex-grow: 1;
   max-width: 50%;
   min-height: 200px;
-  margin: 20px 20px 20px 20px;
   padding: 20px; /* Añadimos padding para que el texto respire */
   font-family: 'Montserrat', sans-serif;
 }
@@ -555,6 +553,7 @@ nav a:hover::after {
   text-align: center;
   flex-wrap: wrap;
   padding: 0;
+  margin: 10px 0px 10px 0px;
   width: 100%;
 }
 .service-section {
@@ -759,7 +758,7 @@ footer a:hover {
 }
 
 /* Estilos responsivos para servicios.html*/
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .slide-fotos {
     height: 60vh; /* Reducimos un poco para pantallas medianas */
     min-height: 350px;
@@ -770,6 +769,33 @@ footer a:hover {
   }
   .service-text p {
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 1371px) {
+  .service-text-intro h2 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text-intro p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1090px) {
+  .slide-fotos {
+    height: 60vh; /* Reducimos un poco para pantallas medianas */
+    min-height: 350px;
+    max-height: 500px;
+  }
+  .service-text h3 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .full-screen-section {
+    height: auto;
+    min-height: 100vh;
   }
 }
 @media (max-width: 720px) {
@@ -919,6 +945,9 @@ footer a:hover {
 @media (min-width: 320px) and (max-width: 768px) {
   /* .contact__content {
   W.I.P: responsive design para el forms y seccion charlemos 
+  } */
+  /* .contact__content {
+  W.I.P: arreglar espacio en blanco para el Footer 
   } */
   /* .contact__form {
   W.I.P: responsive design para el forms y seccion charlemos
