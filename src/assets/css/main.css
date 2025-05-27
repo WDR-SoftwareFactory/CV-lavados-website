@@ -285,7 +285,6 @@ nav a:hover::after {
 
 .contact--section {
   background: var(--light-bg);
-  padding: 60px 20px;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -296,9 +295,9 @@ nav a:hover::after {
 .contact__container {
   max-width: 1400px;
   width: 100%;
-  display: flex;
   flex-direction: column;
   gap: 0px;
+  padding: 120px 0px;
 }
 
 .contact__title {
@@ -323,6 +322,7 @@ nav a:hover::after {
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0px 20px;
 }
 
 .contact__form {
@@ -330,7 +330,6 @@ nav a:hover::after {
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  min-width: 350px;
   background: var(--light-bg);
   padding: 40px;
   border-radius: var(--border-radius);
@@ -384,7 +383,7 @@ nav a:hover::after {
 
 .contact__whatsapp {
   flex: 1;
-  min-width: 350px;
+  /* min-width: 350px; */
   background: var(--whatsapp-bg);
   padding: 40px;
   border-radius: var(--border-radius);
@@ -445,10 +444,10 @@ nav a:hover::after {
 
 /* Estilos del servicios.html */
 .our-services {
-  padding: 0;
   text-align: center;
   background: #ffffff;
   min-height: 100vw; /* Asegura que ocupe al menos la altura de la pantalla */
+  padding: 80px 10px 50px 10px;
 }
 .service-intro {
   display: flex;
@@ -823,9 +822,6 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
   }
-  .hero {
-    padding: 130px 10px 50px 10px; /* Ajustamos para móviles */
-  }
   .hero h1 {
     font-size: 2em;
   }
@@ -890,9 +886,9 @@ footer a:hover {
   }
 }
 @media (max-width: 767px) {
-  .contact--section {
+  /* .contact--section {
     padding: 20px 10px;
-  }
+  } */
   .contact__title {
     font-size: 2.5rem;
   }
@@ -924,9 +920,6 @@ footer a:hover {
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  .contact--section {
-    padding: 50px 20px;
-  }
   .contact__form-row {
     flex-direction: column;
   }
@@ -940,18 +933,6 @@ footer a:hover {
   .contact__subtitle {
     font-size: 1.4rem;
   }
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  /* .contact__content {
-  W.I.P: responsive design para el forms y seccion charlemos 
-  } */
-  /* .contact__content {
-  W.I.P: arreglar espacio en blanco para el Footer 
-  } */
-  /* .contact__form {
-  W.I.P: responsive design para el forms y seccion charlemos
-  } */
 }
 
 @media (min-width: 1200px) {
@@ -971,6 +952,12 @@ footer a:hover {
 .contact--section.fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 345px) {
+  .contact__container {
+    padding: 150px 0px 60px 0px;
+  }
 }
 
 /* Estilos responsivos del footer */

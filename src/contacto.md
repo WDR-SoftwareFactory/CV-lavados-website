@@ -2,7 +2,7 @@
 layout: default
 title: Contacto
 ---
-<section class="contact contact--section fade-in-up" aria-label="Contact Form and WhatsApp Support">
+<section class="contact--section fade-in-up" aria-label="Contact Form and WhatsApp Support">
   <div class="contact__container">
     <h1 class="contact__title">Contáctanos</h1>
     <p class="contact__subtitle">¿Listo para transformar tu espacio? Escribinos y solicita tu presupuesto</p>
