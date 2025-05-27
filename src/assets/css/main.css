@@ -348,7 +348,6 @@ nav a:hover::after {
   text-align: center;
   background: #ffffff;
   min-height: 100vw; /* Asegura que ocupe al menos la altura de la pantalla */
-  padding: 80px 10px 50px 10px;
 }
 .service-intro {
   display: flex;
@@ -984,6 +983,9 @@ footer a:hover {
   }
 }
 @media (max-width: 900px) {
+  .our-services {
+    padding: 40px 10px 50px 10px;
+  }
   .full-screen-section {
     height: auto;
     min-height: 100vh;
