@@ -269,69 +269,185 @@ nav a:hover::after {
   background: #00c4cc;
   color: #ffffff;
 }
-.contacto {
-  padding: 50px 20px;
+
+/* Estilos del contacto.html */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #757575;
+  --accent-color: #25d366;
+  --dark-color: #000000;
+  --light-bg: #ffffff;
+  --whatsapp-bg: #e6f3e6;
+  --border-radius: 20px;
+  --shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
+
+.contact--section {
+  background: var(--light-bg);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__container {
+  max-width: 1400px;
+  width: 100%;
+  flex-direction: column;
+  gap: 0px;
+  padding: 120px 0px;
+}
+
+.contact__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
   text-align: center;
-  background: #ffffff;
 }
-.contact h2 {
-  font-size: 2em;
-  color: #4a90e2;
+
+.contact__subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+  text-align: center;
 }
-.contact form {
-  max-width: 500px;
-  margin: 20px auto;
+
+.contact__content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 20px;
+}
+
+.contact__form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  flex: 1;
+  background: var(--light-bg);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 3px solid #e8ecef;
 }
-.contact label {
+
+.contact__form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.contact__input {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid #e8ecef;
+  border-radius: 10px;
   font-family: "Open Sans", sans-serif;
-  color: #757575;
-  text-align: left;
+  font-size: 1.2rem;
+  transition: var(--transition);
 }
-.contact input,
-.contact textarea {
-  padding: 10px;
-  border: 1px solid #e8ecef;
-  border-radius: 5px;
-  font-family: "Open Sans", sans-serif;
+
+.contact__input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
 }
-.contact button {
-  background: #00c4cc;
-  color: #ffffff;
+
+.contact__input--textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact__submit-btn {
+  background: linear-gradient(90deg, var(--dark-color), #333333); /* Gradiente moderno */
+  color: var(--light-bg);
   border: none;
-  padding: 10px 20px;
+  padding: 16px 32px;
+  font-size: 1.4rem;
   cursor: pointer;
-  transition:
-    background 0.3s,
-    transform 0.3s;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
+  width: 100%;
+  margin-top: 25px;
+  transition: var(--transition);
 }
-.contact button:hover {
-  background: #4a90e2;
+
+.contact__submit-btn:hover {
+  background: linear-gradient(90deg, #333333, #555555);
+  transform: scale(1.03);
+}
+
+.contact__whatsapp {
+  flex: 1;
+  /* min-width: 350px; */
+  background: var(--whatsapp-bg);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 3px solid #e8ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact__whatsapp-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex: 1;
+}
+
+.contact__whatsapp-logo {
+  width: 50%;
+  height: 35%;
+  margin-bottom: 25px;
+  transition: var(--transition);
+}
+
+.contact__whatsapp-logo:hover {
   transform: scale(1.05);
 }
-.contact .whatsapp-btn {
-  background: #25d366;
-  color: #ffffff;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 10px;
-  display: inline-block;
-  transition: background 0.3s;
+
+.contact__whatsapp-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  width: 50%;
 }
-.contact .whatsapp-btn:hover {
-  background: #1da851;
+
+.contact__whatsapp-btn {
+  background: linear-gradient(90deg, var(--accent-color), #1da851);
+  color: var(--light-bg);
+  padding: 16px 32px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 1.4rem;
+  display: inline-block;
+  transition: var(--transition);
+  /* flex: auto; */
+}
+
+.contact__whatsapp-btn:hover {
+  background: linear-gradient(90deg, #1da851, #128c46);
+  transform: scale(1.03);
 }
 
 /* Estilos del servicios.html */
 .our-services {
-  padding: 0;
   text-align: center;
   background: #ffffff;
-  min-height: 100vh; /* Asegura que ocupe al menos la altura de la pantalla */
+  min-height: 100vw; /* Asegura que ocupe al menos la altura de la pantalla */
+  padding: 80px 10px 50px 10px;
 }
 .service-intro {
   display: flex;
@@ -389,12 +505,10 @@ nav a:hover::after {
   justify-content: center; /* Centramos el texto verticalmente */
   border-radius: 12px;
   transition: transform 0.3s;
-  width: 45%;
   min-width: 300px;
   flex-grow: 1;
   max-width: 50%;
   min-height: 200px;
-  margin: 20px 20px 20px 20px;
   padding: 20px; /* Añadimos padding para que el texto respire */
   font-family: 'Montserrat', sans-serif;
 }
@@ -438,6 +552,7 @@ nav a:hover::after {
   text-align: center;
   flex-wrap: wrap;
   padding: 0;
+  margin: 10px 0px 10px 0px;
   width: 100%;
 }
 .service-section {
@@ -463,9 +578,8 @@ nav a:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 75%;
   height: 100vh; /* Altura ajustada para el slider dentro de la sección */
-  overflow: hidden;
   position: relative;
 }
 .gallery-slider .slide-fotos { 
@@ -642,8 +756,8 @@ footer a:hover {
   margin: 0; /* Eliminamos márgenes para un diseño más limpio */
 }
 
-/* Estilos responsivos */
-@media (max-width: 1024px) {
+/* Estilos responsivos para servicios.html*/
+@media (max-width: 1400px) {
   .slide-fotos {
     height: 60vh; /* Reducimos un poco para pantallas medianas */
     min-height: 350px;
@@ -656,17 +770,57 @@ footer a:hover {
     font-size: 1.5rem;
   }
 }
+@media (max-width: 1371px) {
+  .service-text-intro h2 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text-intro p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1090px) {
+  .slide-fotos {
+    height: 60vh; /* Reducimos un poco para pantallas medianas */
+    min-height: 350px;
+    max-height: 500px;
+  }
+  .service-text h3 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .full-screen-section {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+@media (max-width: 720px) {
+  .service-text-intro p {
+    font-size: 1rem;
+  }
+  .service-text h3 {
+    font-size: 2rem; /* Reducimos el tamaño del texto para pantallas pequeñas */
+  }
+  .service-text p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .service-text-intro h2 {
+    font-size: 3rem;
+  }
+}
 
+/* Estilos responsivos para index.html*/
 @media (max-width: 768px) {
   .service-grid,
-  .work-slider,
   .testimonial-slider,
   .gallery-slider {
     flex-direction: column;
     align-items: center;
-  }
-  .hero {
-    padding: 130px 10px 50px 10px; /* Ajustamos para móviles */
   }
   .hero h1 {
     font-size: 2em;
@@ -675,8 +829,12 @@ footer a:hover {
     font-size: 1em;
   }
   .service-card {
-    width: 100%;
+    width: 100%;  
     max-width: 300px;
+    padding: 20px 0 20px 0;
+  }
+  .service-card img {
+    width: 95%;
   }
   .work-slider img {
     height: 200px;
@@ -699,12 +857,6 @@ footer a:hover {
     height: auto; /* Ajustamos la altura para que se adapte al contenido */
     min-height: 100vh; /* Mínimo una pantalla completa */
   }
-  .service-text h3 {
-    font-size: 2.5rem; /* Reducimos aún más para móviles */
-  }
-  .service-text p {
-    font-size: 1.2rem;
-  }
   .service-image img {
     height: auto;
   }
@@ -715,6 +867,96 @@ footer a:hover {
   }
   .gallery-slider {
     height: 60vh; /* Ajusta la altura del slider en móviles */
+  }
+}
+@media (max-width: 480px) {
+  .service-card {
+    margin: 0;
+  }
+}
+
+/* Estilos responsivos del contacto.html */
+@media (max-width: 1358px) {
+  .contact__form-row {
+    flex-direction: column;
+  }
+  .contact__whatsapp-logo {
+    width: 50%;
+    height: auto;
+  }
+}
+@media (max-width: 767px) {
+  /* .contact--section {
+    padding: 20px 10px;
+  } */
+  .contact__title {
+    font-size: 2.5rem;
+  }
+  .contact__subtitle {
+    font-size: 1.2rem;
+  }
+  .contact__form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .contact__input {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  .contact__input--textarea {
+    min-height: 120px;
+  }
+  .contact__submit-btn {
+    font-size: 1.2rem;
+    padding: 14px 28px;
+  }
+  .contact__whatsapp-text {
+    font-size: 1.1rem;
+  }
+  .contact__whatsapp-btn {
+    font-size: 1.2rem;
+    padding: 14px 28px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .contact__form-row {
+    flex-direction: column;
+  }
+  .contact__form,
+  .contact__whatsapp {
+    max-width: 500px;
+  }
+  .contact__title {
+    font-size: 3rem;
+  }
+  .contact__subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact__container {
+    gap: 50px;
+  }
+  .contact__form,
+  .contact__whatsapp {
+    max-width: 650px;
+  }
+}
+.contact--section.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+.contact--section.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 345px) {
+  .contact__container {
+    padding: 150px 0px 60px 0px;
   }
 }
 
@@ -742,7 +984,6 @@ footer a:hover {
     font-size: 1em; /* Reducimos tamaño de fuente */
   }
 }
-
 @media (max-width: 576px) {
   footer {
     padding: 20px 10px; /* Más compacto en móviles pequeños */
@@ -763,5 +1004,13 @@ footer a:hover {
   .contact-btn a {
     padding: 8px 16px; /* Más compacto */
     font-size: 0.9em; /* Fuente más pequeña */
+  }
+}
+@media (max-width: 480px) {
+  .cta-section a {
+    font-size: medium;
+  }
+  .contact-btn {
+    padding: 10px 0 10px 0;
   }
 }
