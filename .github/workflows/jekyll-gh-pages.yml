@@ -33,6 +33,9 @@ jobs:
       - name: Update Jekyll config
         run: |
           sed -i "s|domain:.*|domain: \"${{ vars.FULL_DOMAIN }}\"|" ./src/_config.yml
+
+          sed -i "s|formspree_id:.*|formspree_id: \"${{ secrets.FORMSPREE_ID }}\"|" ./src/_config.yml
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

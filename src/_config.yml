@@ -4,6 +4,7 @@ description: Limpieza integral para hogares, empresas y embarcaciones
 source: ./
 destination: ./_site
 domain: http://localhost:4000
+formspree_id: 
 plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
