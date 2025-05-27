@@ -16,8 +16,81 @@ body {
   background: #ffffff;
   color: #4a90e2;
 }
+/* Animaciones personalizadas */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+.fade-in-up.visible {
+  opacity: 1;
+}
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+.fade-in.visible {
+  opacity: 1;
+}
+/* Asegura que las animaciones se apliquen solo a los elementos de our-services */
+.our-services .fade-in-up,
+.our-services .slide-in-left,
+.our-services .slide-in-right,
+.our-services .fade-in {
+  opacity: 0;
+}
+.our-services .visible {
+  opacity: 1;
+}
+/* Estilos para secciones de pantalla completa */
+.full-screen-section {
+  height: 100vh; /* Altura completa de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0; /* Eliminamos márgenes para un diseño más limpio */
+}
+/* Estilos del botón de subir */
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00c4cc;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s;
+}
+#topBtn:hover {
+  background: #4a90e2;
+}
 
-/* Estilos del header */
+/* ---------------------- */
+/* Estilos del header.html */
 header {
   background: #4a90e2;
   padding: 20px 10px 20px 10px;
@@ -270,178 +343,6 @@ nav a:hover::after {
   color: #ffffff;
 }
 
-/* Estilos del contacto.html */
-:root {
-  --primary-color: #4a90e2;
-  --secondary-color: #757575;
-  --accent-color: #25d366;
-  --dark-color: #000000;
-  --light-bg: #ffffff;
-  --whatsapp-bg: #e6f3e6;
-  --border-radius: 20px;
-  --shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-  --transition: all 0.3s ease;
-}
-
-.contact--section {
-  background: var(--light-bg);
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact__container {
-  max-width: 1400px;
-  width: 100%;
-  flex-direction: column;
-  gap: 0px;
-  padding: 120px 0px;
-}
-
-.contact__title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.contact__subtitle {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.5rem;
-  color: var(--secondary-color);
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.contact__content {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0px 20px;
-}
-
-.contact__form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex: 1;
-  background: var(--light-bg);
-  padding: 40px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  border: 3px solid #e8ecef;
-}
-
-.contact__form-row {
-  display: flex;
-  gap: 20px;
-}
-
-.contact__input {
-  flex: 1;
-  padding: 14px;
-  border: 2px solid #e8ecef;
-  border-radius: 10px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem;
-  transition: var(--transition);
-}
-
-.contact__input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
-}
-
-.contact__input--textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.contact__submit-btn {
-  background: linear-gradient(90deg, var(--dark-color), #333333); /* Gradiente moderno */
-  color: var(--light-bg);
-  border: none;
-  padding: 16px 32px;
-  font-size: 1.4rem;
-  cursor: pointer;
-  border-radius: var(--border-radius);
-  width: 100%;
-  margin-top: 25px;
-  transition: var(--transition);
-}
-
-.contact__submit-btn:hover {
-  background: linear-gradient(90deg, #333333, #555555);
-  transform: scale(1.03);
-}
-
-.contact__whatsapp {
-  flex: 1;
-  /* min-width: 350px; */
-  background: var(--whatsapp-bg);
-  padding: 40px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  border: 3px solid #e8ecef;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.contact__whatsapp-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  flex: 1;
-}
-
-.contact__whatsapp-logo {
-  width: 50%;
-  height: 35%;
-  margin-bottom: 25px;
-  transition: var(--transition);
-}
-
-.contact__whatsapp-logo:hover {
-  transform: scale(1.05);
-}
-
-.contact__whatsapp-text {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.3rem;
-  color: var(--primary-color);
-  width: 50%;
-}
-
-.contact__whatsapp-btn {
-  background: linear-gradient(90deg, var(--accent-color), #1da851);
-  color: var(--light-bg);
-  padding: 16px 32px;
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  font-size: 1.4rem;
-  display: inline-block;
-  transition: var(--transition);
-  /* flex: auto; */
-}
-
-.contact__whatsapp-btn:hover {
-  background: linear-gradient(90deg, #1da851, #128c46);
-  transform: scale(1.03);
-}
-
 /* Estilos del servicios.html */
 .our-services {
   text-align: center;
@@ -613,7 +514,313 @@ nav a:hover::after {
   min-width: 0; /* Evita problemas con el flex */
 }
 
-/* Estilos del footer */
+/* Estilos del sobre-nosotros.html */
+.about--hero {
+  background: linear-gradient(135deg, #ffffff 70%, #f0f7f4 100%);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about__container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.about__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.about__subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+.about__cta-btn {
+  background: var(--dark-color);
+  color: var(--light-bg);
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 1.3rem;
+  display: inline-block;
+  transition: var(--transition);
+}
+.about__cta-btn:hover {
+  background: #333333;
+  transform: scale(1.03);
+}
+.about--benefits .about__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  flex: 1;
+  padding: 60px 0px;
+}
+.about--history,
+.about--values,
+.about--team,
+.about--cta {
+  padding: 60px 20px;
+}
+.about__section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about__section-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  max-width: 800px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+.about__values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.about__value-card {
+  background: var(--light-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 2px solid #e8ecef;
+  text-align: center;
+}
+.about__value-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.about__value-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+.about__team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.about__team-member {
+  text-align: center;
+}
+.about__team-photo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+.about__team-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+.about__team-role {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+.about__team-bio {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+.about__benefits-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about__benefits-list li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+}
+.about__benefits-list li::before {
+  content: "✔";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+.about--cta {
+  background: var(--whatsapp-bg);
+  text-align: center;
+}
+
+/* Estilos del contacto.html */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #757575;
+  --accent-color: #25d366;
+  --dark-color: #000000;
+  --light-bg: #ffffff;
+  --whatsapp-bg: #e6f3e6;
+  --border-radius: 20px;
+  --shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
+.contact--section {
+  background: var(--light-bg);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__container {
+  max-width: 1400px;
+  width: 100%;
+  flex-direction: column;
+  gap: 0px;
+  padding: 120px 0px;
+}
+.contact__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  text-align: center;
+}
+.contact__subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+  text-align: center;
+}
+.contact__content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 20px;
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  background: var(--light-bg);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 3px solid #e8ecef;
+}
+.contact__form-row {
+  display: flex;
+  gap: 20px;
+}
+.contact__input {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid #e8ecef;
+  border-radius: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+.contact__input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+}
+.contact__input--textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+.contact__submit-btn {
+  background: linear-gradient(90deg, var(--dark-color), #333333); /* Gradiente moderno */
+  color: var(--light-bg);
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  width: 100%;
+  margin-top: 25px;
+  transition: var(--transition);
+}
+.contact__submit-btn:hover {
+  background: linear-gradient(90deg, #333333, #555555);
+  transform: scale(1.03);
+}
+.contact__whatsapp {
+  flex: 1;
+  background: var(--whatsapp-bg);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 3px solid #e8ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact__whatsapp-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex: 1;
+}
+.contact__whatsapp-logo {
+  width: 50%;
+  height: 35%;
+  margin-bottom: 25px;
+  transition: var(--transition);
+}
+.contact__whatsapp-logo:hover {
+  transform: scale(1.05);
+}
+.contact__whatsapp-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  width: 50%;
+}
+.contact__whatsapp-btn {
+  background: linear-gradient(90deg, var(--accent-color), #1da851);
+  color: var(--light-bg);
+  padding: 16px 32px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 1.4rem;
+  display: inline-block;
+  transition: var(--transition);
+}
+.contact__whatsapp-btn:hover {
+  background: linear-gradient(90deg, #1da851, #128c46);
+  transform: scale(1.03);
+}
+
+/* Estilos del footer.html */
 footer {
   background: #1a3c87;
   color: #ffffff;
@@ -676,144 +883,10 @@ footer a:hover {
   flex-direction: row;
   gap: 2rem;
 }
-/* Estilos del botón de subir */
-#topBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #00c4cc;
-  color: #ffffff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  transition: background 0.3s;
-}
-#topBtn:hover {
-  background: #4a90e2;
-}
 
-/* Animaciones personalizadas */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-.fade-in-up.visible {
-  opacity: 1;
-}
 
-.slide-in-left {
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-.slide-in-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-in-right {
-  opacity: 0;
-  transform: translateX(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-.slide-in-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-}
-.fade-in.visible {
-  opacity: 1;
-}
-
-/* Asegura que las animaciones se apliquen solo a los elementos de our-services */
-.our-services .fade-in-up,
-.our-services .slide-in-left,
-.our-services .slide-in-right,
-.our-services .fade-in {
-  opacity: 0;
-}
-
-.our-services .visible {
-  opacity: 1;
-}
-
-/* Estilos para secciones de pantalla completa */
-.full-screen-section {
-  height: 100vh; /* Altura completa de la pantalla */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  margin: 0; /* Eliminamos márgenes para un diseño más limpio */
-}
-
-/* Estilos responsivos para servicios.html*/
-@media (max-width: 1400px) {
-  .slide-fotos {
-    height: 60vh; /* Reducimos un poco para pantallas medianas */
-    min-height: 350px;
-    max-height: 500px;
-  }
-  .service-text h3 {
-    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
-  }
-  .service-text p {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 1371px) {
-  .service-text-intro h2 {
-    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
-  }
-  .service-text-intro p {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 1090px) {
-  .slide-fotos {
-    height: 60vh; /* Reducimos un poco para pantallas medianas */
-    min-height: 350px;
-    max-height: 500px;
-  }
-  .service-text h3 {
-    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
-  }
-  .service-text p {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 900px) {
-  .full-screen-section {
-    height: auto;
-    min-height: 100vh;
-  }
-}
-@media (max-width: 720px) {
-  .service-text-intro p {
-    font-size: 1rem;
-  }
-  .service-text h3 {
-    font-size: 2rem; /* Reducimos el tamaño del texto para pantallas pequeñas */
-  }
-  .service-text p {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .service-text-intro h2 {
-    font-size: 3rem;
-  }
-}
-
+/* Estilos responsivos */
+/* ---------------------- */
 /* Estilos responsivos para index.html*/
 @media (max-width: 768px) {
   .service-grid,
@@ -875,6 +948,132 @@ footer a:hover {
   }
 }
 
+/* Estilos responsivos para servicios.html*/
+@media (max-width: 1400px) {
+  .slide-fotos {
+    height: 60vh; /* Reducimos un poco para pantallas medianas */
+    min-height: 350px;
+    max-height: 500px;
+  }
+  .service-text h3 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1371px) {
+  .service-text-intro h2 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text-intro p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1090px) {
+  .slide-fotos {
+    height: 60vh; /* Reducimos un poco para pantallas medianas */
+    min-height: 350px;
+    max-height: 500px;
+  }
+  .service-text h3 {
+    font-size: 3rem; /* Reducimos el tamaño del texto para pantallas medianas */
+  }
+  .service-text p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .full-screen-section {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+@media (max-width: 720px) {
+  .service-text-intro p {
+    font-size: 1rem;
+  }
+  .service-text h3 {
+    font-size: 2rem; /* Reducimos el tamaño del texto para pantallas pequeñas */
+  }
+  .service-text p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .service-text-intro h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Estilos responsivos del sobre-nosotros.html */
+@media (min-width: 1200px) {
+  .about__title {
+    font-size: 3.5rem;
+  }
+  .about__subtitle {
+    font-size: 1.8rem;
+  }
+  .about__section-title {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .about--hero {
+    padding: 40px 10px;
+    min-height: 90vh;
+  }
+  .about__title {
+    font-size: 2rem;
+  }
+  .about__subtitle {
+    font-size: 1.2rem;
+  }
+  .about__cta-btn {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+  .about--history,
+  .about--values,
+  .about--team,
+  .about--benefits,
+  .about--cta {
+    padding: 40px 10px;
+  }
+  .about__section-title {
+    font-size: 2rem;
+  }
+  .about__section-text {
+    font-size: 1rem;
+  }
+  .about__value-title {
+    font-size: 1.3rem;
+  }
+  .about__value-text {
+    font-size: 0.9rem;
+  }
+  .about__team-photo {
+    max-width: 150px;
+  }
+  .about__team-name {
+    font-size: 1.2rem;
+  }
+  .about__team-role,
+  .about__team-bio {
+    font-size: 0.9rem;
+  }
+  .about__benefits-list li {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 412px) {
+  .about--hero {
+    padding: 0px 10px;
+    min-height: 100vh;
+  }
+}
+
+
 /* Estilos responsivos del contacto.html */
 @media (max-width: 1358px) {
   .contact__form-row {
@@ -886,9 +1085,6 @@ footer a:hover {
   }
 }
 @media (max-width: 767px) {
-  /* .contact--section {
-    padding: 20px 10px;
-  } */
   .contact__title {
     font-size: 2.5rem;
   }
@@ -918,23 +1114,6 @@ footer a:hover {
     padding: 14px 28px;
   }
 }
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .contact__form-row {
-    flex-direction: column;
-  }
-  .contact__form,
-  .contact__whatsapp {
-    max-width: 500px;
-  }
-  .contact__title {
-    font-size: 3rem;
-  }
-  .contact__subtitle {
-    font-size: 1.4rem;
-  }
-}
-
 @media (min-width: 1200px) {
   .contact__container {
     gap: 50px;
@@ -953,7 +1132,21 @@ footer a:hover {
   opacity: 1;
   transform: translateY(0);
 }
-
+@media (min-width: 768px) and (max-width: 1199px) {
+  .contact__form-row {
+    flex-direction: column;
+  }
+  .contact__form,
+  .contact__whatsapp {
+    max-width: 500px;
+  }
+  .contact__title {
+    font-size: 3rem;
+  }
+  .contact__subtitle {
+    font-size: 1.4rem;
+  }
+}
 @media (max-width: 345px) {
   .contact__container {
     padding: 150px 0px 60px 0px;
