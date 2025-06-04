@@ -1,0 +1,16 @@
+services:
+  jekyll:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec jekyll serve --baseurl="" --host 0.0.0.0 --force_polling --config _config.yml,_environment.yml
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./src:/srv/jekyll
+      - ./_config.yml:/srv/jekyll/_config.yml
+      - ./_environment.yml:/srv/jekyll/_environment.yml
+    environment:
+      - JEKYLL_ENV=development
+      - SITE_URL=http://localhost:4000
+      - SITE_BASEURL=

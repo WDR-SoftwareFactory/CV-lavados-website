@@ -4,7 +4,7 @@ name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["dev"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,11 +30,19 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Update Jekyll config
+        run: |
+          sed -i "s|domain:.*|domain: \"${{ vars.FULL_DOMAIN }}\"|" ./src/_config.yml
+
+          sed -i "s|formspree_id:.*|formspree_id: \"${{ secrets.FORMSPREE_ID }}\"|" ./src/_config.yml
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./cv-lavados
+          source: ./src
           destination: ./_site
+        env:
+          JEKYLL_ENV: production
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="CV Lavados - Servicios de limpieza profesional en Buenos Aires. Lavado de alfombras, tapizados, finales de obra y más para hogares, empresas y embarcaciones." />
+  <meta name="keywords"
+    content="limpieza profesional, lavado de alfombras, tapizados, limpieza de oficinas, finales de obra, limpieza de embarcaciones, Buenos Aires, CV Lavados" />
+  <meta name="author" content="CV Lavados" />
+  <meta name="robots" content="index, follow" />
+  <title>{{ page.title }} - CV Lavados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="{{ './assets/css/main.css' | relative_url }}" />
+  <link rel="icon" href="{{ './assets/images/cv.png' | relative_url }}" />
+</head>
+
+<body>
+  {% include header.html %} {{ content }} {% include footer.html %}
+  <button id="topBtn" aria-label="Volver al inicio">↑</button>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Animaciones al hacer scroll
+      const fadeElems = document.querySelectorAll(".fade-in-up, .slide-in-left, .slide-in-right, .fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      fadeElems.forEach((el) => observer.observe(el));
+
+      // Sliders de servicios
+      const serviceSliders = document.querySelectorAll(".slider--inner");
+      serviceSliders.forEach((slider) => {
+        const images = slider.querySelectorAll(".slide-img");
+        const totalImages = images.length;
+
+        // Calcular el ancho total de .slider--inner (número de imágenes * 100%)
+        slider.style.width = `${totalImages * 100}%`;
+
+        // Asegurarse de que cada imagen tenga el ancho correcto
+        images.forEach((img) => {
+          img.style.width = `${100 / totalImages}%`;
+        });
+
+        let index = 0;
+
+        setInterval(function () {
+          index++;
+          if (index >= totalImages) {
+            index = 0;
+            slider.style.transition = "none";
+            slider.style.transform = "translateX(0)";
+            void slider.offsetWidth; // Forzar reflow
+            slider.style.transition = "transform 0.6s ease-in-out";
+          } else {
+            // Calcular el porcentaje relativo al ancho total de .slider--inner
+            let percentage = -(index * (100 / totalImages));
+            slider.style.transform = `translateX(${percentage}%)`;
+          }
+        }, 3000);
+      });
+
+      // Lógica para el testimonial-slider
+      const testimonialSlider = document.querySelector('.testimonial-slider');
+      if (testimonialSlider) {
+        let testimonialIndex = 0;
+        const testimonials = testimonialSlider.querySelectorAll('blockquote');
+        setInterval(() => {
+          testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+          testimonials[testimonialIndex].classList.add('active');
+          testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+        }, 5000); // Cambia cada 5 segundos
+      }
+
+      // Botón "Volver arriba"
+      const topBtn = document.getElementById("topBtn");
+      window.onscroll = () => {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          topBtn.style.display = "block";
+        } else {
+          topBtn.style.display = "none";
+        }
+      };
+      topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal({ reset: true });
+    ScrollReveal().reveal(".headline");
+    ScrollReveal().reveal(".tagline", { delay: 500 });
+    ScrollReveal().reveal(".punchline", { delay: 2000 });
+  </script>
+</body>
+</html>

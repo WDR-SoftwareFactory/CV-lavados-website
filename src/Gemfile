@@ -1,0 +1,12 @@
+source "https://rubygems.org"
+
+gem "jekyll"
+gem "jekyll-sitemap"
+gem "jekyll-sass-converter"
+gem "jekyll-feed"
+gem "jekyll-seo-tag"
+gem "jekyll-environment-variables" # Asegúrate de que esta línea esté presente
+
+group :jekyll_plugins do
+  gem "webrick" # Opcional, necesario para Ruby 3+
+end
