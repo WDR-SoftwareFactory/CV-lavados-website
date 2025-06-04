@@ -7,7 +7,7 @@ title: Contacto
     <h1 class="contact__title">Contáctanos</h1>
     <p class="contact__subtitle">¿Listo para transformar tu espacio? Escribinos y solicita tu presupuesto</p>
     <div class="contact__content">
-      <form class="contact__form" action="https://formspree.io/f/{{ site.FORMSPREE_ID }}" method="POST">
+      <form class="contact__form" action="https://formspree.io/f/xjkwpojd" method="POST">
         <div class="contact__form-row">
           <input type="text" name="nombre" placeholder="Nombre" required aria-required="true" class="contact__input" />
           <input type="text" name="apellido" placeholder="Apellido" required aria-required="true"
