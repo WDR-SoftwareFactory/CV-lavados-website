@@ -35,8 +35,8 @@ jobs:
           sed -i "s|domain:.*|domain: \"${{ vars.FULL_DOMAIN }}\"|" ./src/_config.yml
 
           # Handle formspree_id whether it's empty or has a value
-          if [ -n "${{ secrets.FORMSPREE_ID }}" ]; then
-            sed -i "s|formspree_id:.*|formspree_id: \"${{ secrets.FORMSPREE_ID }}\"|" ./src/_config.yml
+          if [ -n "${{ vars.FORMSPREE_ID }}" ]; then
+            sed -i "s|formspree_id:.*|formspree_id: \"${{ vars.FORMSPREE_ID }}\"|" ./src/_config.yml
           else
             echo "Warning: FORMSPREE_ID secret is not set"
           fi
