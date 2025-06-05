@@ -10,7 +10,21 @@
     content="limpieza profesional, lavado de alfombras, tapizados, limpieza de oficinas, finales de obra, limpieza de embarcaciones, Buenos Aires, CV Lavados" />
   <meta name="author" content="CV Lavados" />
   <meta name="robots" content="index, follow" />
-  <title>{{ page.title }} - CV Lavados</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5FCBR53QB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-J5FCBR53QB');
+  </script>
+  <!-- SEO Meta Tags -->
+  <title>
+    {% if page.title %}{{ page.title }} - CV Lavados{% else %}CV Lavados - Servicios de Limpieza{% endif %}
+  </title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Servicios de limpieza profesional para hogares, empresas, sillones y más con CV Lavados.{% endif %}"/>
+  <meta name="keywords" content="limpieza, servicios de limpieza, lavados, cv lavados, sillones, interiores, finales de obra, embarcaciones, hogares, empresas"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -100,13 +114,6 @@
       };
       topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  </script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script>
-    ScrollReveal({ reset: true });
-    ScrollReveal().reveal(".headline");
-    ScrollReveal().reveal(".tagline", { delay: 500 });
-    ScrollReveal().reveal(".punchline", { delay: 2000 });
   </script>
 </body>
 </html>
