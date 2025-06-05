@@ -68,7 +68,7 @@ Durante el desarrollo, se prestará atención a los siguientes puntos:
     *   Monitorización con Google PageSpeed Insights / Lighthouse.
     *   Priorización de la carga del contenido visible (Above the Fold).
     *   Uso eficiente del caché del navegador.
-*   **✅ Formulario de Contacto (Si aplica):**
+*   **✅ Formulario de Contacto:**
     *   Se utilizará un servicio serverless como Formspree para procesar los envíos del formulario sin necesidad de backend propio.
 *   **✅ Analíticas Web (Opcional):**
     *   Se considerará integrar Google Analytics para monitorizar el tráfico.
