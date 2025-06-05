@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Sobre Nosotros
+title: "Sobre nosotros - CV Lavados"
+description: "CV Lavados es una empresa familiar con años de trayectoria en el mundo de los servicios de limpieza. Conócenos."
 ---
 
 <section class="about about--hero fade-in-up">
