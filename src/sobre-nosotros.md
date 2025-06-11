@@ -54,12 +54,12 @@ description: "CV Lavados es una empresa familiar con años de trayectoria en el 
         <p class="about__team-role">Fundador y Experto en Limpieza</p>
         <p class="about__team-bio">Con más de 10 años de experiencia, Javier lidera CV Lavados con una misión clara: hacer que cada espacio brille.</p>
       </div>
-      <div class="about__team-member">
-        <img src="{{ site.baseurl }}/assets/images/javi.jpg" alt="Juan Pérez" class="about__team-photo">
+      <!-- <div class="about__team-member">
+        <img src="{{ site.baseurl }}/assets/images/javi.jpg" alt="Rosana Grossi" class="about__team-photo">
         <h3 class="about__team-name">Rosana Grossi</h3>
         <p class="about__team-role">Co-Fundadora y Líder de equipos</p>
         <p class="about__team-bio">Desde los inicios, se hizo cargo de la logistica de equipo y proyectos. Atenta a los detalles y dedicada por ofrecer un espacio limpio de calidad.</p>
-      </div>
+      </div> -->
       <!-- Repetir para otros miembros -->
     </div>
   </div>
